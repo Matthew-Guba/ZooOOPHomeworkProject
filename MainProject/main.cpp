@@ -9,7 +9,7 @@ int main() {
 
 	if (quanity <= 0) {
 		cout << "Invalid data.";
-		return 0;
+		return -1;
 	}
 
 	Animal* an = new Animal[quanity];
