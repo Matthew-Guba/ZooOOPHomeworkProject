@@ -14,7 +14,7 @@ int main() {
 
 	Animal* an = new Animal[quanity];
 
-	for (int i = 0; i <= quanity; i++) {
+	for (int i = 0; i < quanity; i++) {
 		cout << "Enter data of " << i + 1 << " animal: " << endl;
 
 		cout << "Name: ";
@@ -31,27 +31,18 @@ int main() {
 		cin >> alive;
 
 
-		if (alive == "yes") {
-			an[i].alive = true;
-		}
-		else{
-			an[i].alive = false;
-		}
+		alive == "yes" ? (an[i].alive = 1) : (an[i].alive = 0);
 		
 
 		string is_predator;
 		cout << "Is animal a predator(type yes or not): ";
-		cin >> an[i].is_predator;
+		cin >> is_predator;
 
 
-		if (is_predator == "yes") {
-			an[i].is_predator = true;
-		}
-		else {
-			an[i].is_predator = false;
-		}
-		
+		is_predator == "yes" ? (an[i].is_predator = 1) : (an[i].is_predator = 0);
+
 		cout << endl;
+		cout << an->toString() << endl;
 	}
 
 
