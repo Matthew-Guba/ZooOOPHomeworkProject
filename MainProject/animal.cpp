@@ -9,6 +9,7 @@ void Animal::setAge(int ag) { age = ag; }
 double Animal::getWeight() { return weight; }
 void Animal::setWeight(double wt) { weight = wt; }
 
+
 string Animal::toString() const {
     ostringstream stream;
     stream << fixed << setprecision(2) << weight;
@@ -16,6 +17,7 @@ string Animal::toString() const {
         ", height: " + stream.str() + ", predator: " + (is_predator ? "Yes" : "No") +
         ", alive: " + (is_alive ? "Yes" : "No");
 }
+
 
 Animal::~Animal() {
 

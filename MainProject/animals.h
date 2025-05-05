@@ -1,50 +1,43 @@
-#pragma once
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <sstream>  
 using namespace std;
 
 class Animal {
 	
-public:
+private:
 	string name;
 	int age;
 	double weight;
-	bool alive;
+	bool is_alive;
 	bool is_predator;
+public:
 
-	Animal(string nm) {
-		name = nm;
-		age = 0;
-		weight = 0.0;
-		alive = false;
-		is_predator = false;
-	}
-	Animal(string nm, int a) {
-		name = nm;
-		age = a;
-		weight = 0;
-		alive = false;
-		is_predator = false;
+
+	Animal() :Animal("nn", 20, 2000.21, true, true) {}
+	Animal(string nm) :Animal(nm, 20, 2000.21, true, true) {}
+	Animal(string nm, int age) : Animal(nm, age, 2000.21, true, true) {}
+	Animal(string nm, int age, double weight, bool is_predator, bool is_alive)
+		: name(nm), age(age), weight(weight), is_predator(is_predator), is_alive(is_alive) {
 	}
 
-	Animal(string nm, int a, double m, bool al, bool pred) {
-		name = nm;
-		age = a;
-		weight = m;
-		alive = al;
-		is_predator = pred;
-	}
-	~Animal() {
-	}
+	Animal(const Animal& animal) : Animal(animal.name, animal.age, animal.weight, animal.is_predator, animal.is_alive) {}
 
-	string toString() {
-		string s = "Name: " + name;
-		s += (", age: " + to_string(age));
-		s += ", weight: " + to_string(weight);
-		s += ", alive: ";
-		s += (alive ? "yes" : "not");
-		s += ", predator: ";
-		s += (is_predator ? "yes" : "not");
-		return s;
-	}
+
+
+	~Animal();
+	string getName();
+	void setName(string name);
+	int getAge();
+	void setAge(int age);
+	double getWeight();
+	void setWeight(double weight);
+	bool getPredator() const { return is_predator; }
+	void setPredator(bool pred) { is_predator = pred; }
+	bool getAlive() const { return is_alive; }
+	void setAlive(bool al) { is_alive = al; }
+
+	string toString() const;
+
 };
