@@ -14,7 +14,7 @@ string Animal::toString() const {
     ostringstream stream;
     stream << fixed << setprecision(2) << weight;
     return "Name: " + name + ", age: " + to_string(age) +
-        ", height: " + stream.str() + ", predator: " + (is_predator ? "Yes" : "No") +
+        ", weight: " + stream.str() + ", predator: " + (is_predator ? "Yes" : "No") +
         ", alive: " + (is_alive ? "Yes" : "No");
 }
 

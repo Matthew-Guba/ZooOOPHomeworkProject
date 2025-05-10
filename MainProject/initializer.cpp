@@ -6,11 +6,11 @@ void Initializer::init(Animal*& list, int count) {
 	string names[]{ "Lion","Cow","Goat",
 		"Frog","Crab","Tiger" };
 
-	int minAge = 20;
-	int maxAge = 80;
+	int minAge = 10;
+	int maxAge = 200;
 
-	double minWeight = 1.70;
-	double maxWeight = 2.00;
+	double minWeight =20;
+	double maxWeight =1000;
 
 	for (int i = 0; i < count; i++) {
 		list[i].setName(names[rand() % 6]);

@@ -1,22 +1,44 @@
-#include "animals.h"
+#include "Manager.h"
 
-string Animal::getName() { return name; }
-void Animal::setName(string nm) { name = nm; }
+int main() {
+	int count;
 
-int Animal::getAge() { return age; }
-void Animal::setAge(int ag) { age = ag; }
+	cout << "Input number of animals: ";
+	cin >> count;
 
-double Animal::getWeight() { return weight; }
-void Animal::setWeight(double wt) { weight = wt; }
+	Animal* list = nullptr;
 
-string Animal::toString() const {
-    ostringstream stream;
-    stream << fixed << setprecision(2) << weight;
-    return "Name: " + name + ", age: " + to_string(age) +
-        ", height: " + stream.str() + ", predator: " + (is_predator ? "Yes" : "No") +
-        ", alive: " + (is_alive ? "Yes" : "No");
-}
+	Initializer initializer;
+	Manager manager;
 
-Animal::~Animal() {
+	initializer.init(list, count);
 
+	cout << "List of animals:\n";
+	for (int i = 0; i < count; i++)
+	{
+		cout << list[i].toString() << endl;
+	}
+
+	int size = 0;
+	Animal* oldestList = manager.getOldestAnimal(list, count, &size);
+
+	cout << "\nList of oldest animals:\n";
+	for (int i = 0; i < size; i++)
+	{
+		cout << oldestList[i].toString() << endl;
+	}
+
+	Animal* youngestList = manager.getYoungestAnimal(list, count, &size);
+
+	cout << "\nList of youngest animals:\n";
+	for (int i = 0; i < size; i++)
+	{
+		cout << youngestList[i].toString() << endl;
+	}
+
+	delete[] list;
+	delete[] youngestList;
+	delete[] oldestList;
+
+	return 0;
 }
