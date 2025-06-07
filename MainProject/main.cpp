@@ -1,44 +1,28 @@
-#include "Manager.h"
+#include "zoo.h"
+#include "lion.h"
+#include "elephant.h"
+#include "tiger.h"
+#include "giraffe.h"
+#include "zebra.h"
+#include <iostream>
+
+using namespace std;
 
 int main() {
-	int count;
+    Zoo zoo;
 
-	cout << "Input number of animals: ";
-	cin >> count;
+    // Add animals
+    zoo.addAnimal(new Lion("Simba", 5, 190.5));
+    zoo.addAnimal(new Lion("Nala", 4, 160.0));
+    zoo.addAnimal(new Elephant("Dumbo", 10, 5000.0));
+    zoo.addAnimal(new Tiger("Rajah", 6, 220.0));
+    zoo.addAnimal(new Giraffe("Melman", 8, 1200.0));
+    zoo.addAnimal(new Zebra("Marty", 7, 350.0));
 
-	Animal* list = nullptr;
+    // Display zoo information
+    cout << "Zoo contains " << zoo.getAnimalCount() << " animals:\n";
+    cout << zoo.listAnimals() << endl;
+    cout << "Sounds:\n" << zoo.makeAllSounds() << endl;
 
-	Initializer initializer;
-	Manager manager;
-
-	initializer.init(list, count);
-
-	cout << "List of animals:\n";
-	for (int i = 0; i < count; i++)
-	{
-		cout << list[i].toString() << endl;
-	}
-
-	int size = 0;
-	Animal* oldestList = manager.getOldestAnimal(list, count, &size);
-
-	cout << "\nList of oldest animals:\n";
-	for (int i = 0; i < size; i++)
-	{
-		cout << oldestList[i].toString() << endl;
-	}
-
-	Animal* youngestList = manager.getYoungestAnimal(list, count, &size);
-
-	cout << "\nList of youngest animals:\n";
-	for (int i = 0; i < size; i++)
-	{
-		cout << youngestList[i].toString() << endl;
-	}
-
-	delete[] list;
-	delete[] youngestList;
-	delete[] oldestList;
-
-	return 0;
+    return 0;
 }

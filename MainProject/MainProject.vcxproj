@@ -128,16 +128,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="animal.cpp" />
-    <ClCompile Include="Group.cpp" />
-    <ClCompile Include="initializer.cpp" />
+    <ClCompile Include="elephant.cpp" />
+    <ClCompile Include="giraffe.cpp" />
+    <ClCompile Include="lion.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="manager.cpp" />
+    <ClCompile Include="Tiger.cpp" />
+    <ClCompile Include="zebra.cpp" />
+    <ClCompile Include="Zoo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="animals.h" />
-    <ClInclude Include="Group.h" />
-    <ClInclude Include="initializer.h" />
-    <ClInclude Include="manager.h" />
+    <ClInclude Include="animal.h" />
+    <ClInclude Include="elephant.h" />
+    <ClInclude Include="giraffe.h" />
+    <ClInclude Include="lion.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="tiger.h" />
+    <ClInclude Include="zebra.h" />
+    <ClInclude Include="zoo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

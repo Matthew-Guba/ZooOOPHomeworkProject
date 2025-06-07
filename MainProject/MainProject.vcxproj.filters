@@ -18,30 +18,51 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="initializer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="animal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Group.cpp">
+    <ClCompile Include="Zoo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="elephant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tiger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="giraffe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zebra.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="animals.h">
+    <ClInclude Include="animal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="manager.h">
+    <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="initializer.h">
+    <ClInclude Include="zoo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Group.h">
+    <ClInclude Include="lion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="elephant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tiger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="giraffe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zebra.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

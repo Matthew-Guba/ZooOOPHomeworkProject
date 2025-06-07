@@ -1,24 +1,28 @@
-#include "animals.h"
+#include "animal.h"
 
-string Animal::getName() { return name; }
-void Animal::setName(string nm) { name = nm; }
-
-int Animal::getAge() { return age; }
-void Animal::setAge(int ag) { age = ag; }
-
-double Animal::getWeight() { return weight; }
-void Animal::setWeight(double wt) { weight = wt; }
-
-
-string Animal::toString() const {
-    ostringstream stream;
-    stream << fixed << setprecision(2) << weight;
-    return "Name: " + name + ", age: " + to_string(age) +
-        ", weight: " + stream.str() + ", predator: " + (is_predator ? "Yes" : "No") +
-        ", alive: " + (is_alive ? "Yes" : "No");
+Animal::Animal(string name, int age, bool is_predator, double weight, string species)
+    : name(name), age(age), is_alive(true), is_predator(is_predator),
+    weight(weight), species(species) {
 }
 
+Animal::~Animal() {}
 
-Animal::~Animal() {
+void Animal::setName(string newName) { name = newName; }
+void Animal::setAge(int newAge) { age = newAge; }
+void Animal::setIsAlive(bool alive) { is_alive = alive; }
+void Animal::setWeight(double newWeight) { weight = newWeight; }
 
+string Animal::getName() { return name; }
+int Animal::getAge() { return age; }
+bool Animal::getIsAlive() { return is_alive; }
+bool Animal::getIsPredator() { return is_predator; }
+double Animal::getWeight() { return weight; }
+string Animal::getSpecies() { return species; }
+
+string Animal::getInfo() {
+    return species + " " + name +
+        ", Age: " + to_string(age) +
+        ", Weight: " + to_string(weight) + "kg" +
+        ", Status: " + (is_alive ? "Alive" : "Dead") +
+        ", Type: " + (is_predator ? "Predator" : "Prey");
 }
