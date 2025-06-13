@@ -1,7 +1,15 @@
 #include "giraffe.h"
 
-Giraffe::Giraffe(string name, int age, double weight)
-    : Animal(name, age, false, weight, "Giraffe") {
+Giraffe::Giraffe(const std::string& name, int age, double weight, double neck_length)
+    : Animal(name, age, weight), neck_length(neck_length) {
 }
 
-string Giraffe::makeSound() { return "Hum!"; }
+std::string Giraffe::makeSound() const { return "Hum!"; }
+
+std::string Giraffe::getInfo() const {
+    return "Giraffe " + name + " (Age: " + std::to_string(age)
+        + ", Weight: " + std::to_string(weight) + "kg"
+        + ", Neck: " + std::to_string(neck_length) + "m)";
+}
+
+std::string Giraffe::getSpecies() const { return "Giraffe"; }

@@ -39,12 +39,12 @@
     <ClCompile Include="zebra.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="monkey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="zoo.h">
@@ -63,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="zebra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="monkey.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

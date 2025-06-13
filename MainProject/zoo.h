@@ -2,16 +2,14 @@
 #include "animal.h"
 
 class Zoo {
-    Animal** animals;
-    int capacity;
-    int count;
+    static const int MAX_ANIMALS = 10;
+    Animal* animals[MAX_ANIMALS];
+    int count = 0;
 
 public:
-    Zoo();
     ~Zoo();
-
     void addAnimal(Animal* animal);
-    string listAnimals();
-    string makeAllSounds();
-    int getAnimalCount();
+    void listAnimals() const;
+    void makeAllSounds() const;
+    int getAnimalCount() const { return count; }
 };

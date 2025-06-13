@@ -1,7 +1,15 @@
 #include "elephant.h"
 
-Elephant::Elephant(string name, int age, float weight)
-    : Animal(name, age, false, weight, "Elephant") {
+Elephant::Elephant(const std::string& name, int age, double weight, double tusk_length)
+    : Animal(name, age, weight), tusk_length(tusk_length) {
 }
 
-string Elephant::makeSound() { return "Trumpet!"; }
+std::string Elephant::makeSound() const { return "Trumpet!"; }
+
+std::string Elephant::getInfo() const {
+    return "Elephant " + name + " (Age: " + std::to_string(age)
+        + ", Weight: " + std::to_string(weight) + "kg"
+        + ", Tusks: " + std::to_string(tusk_length) + "cm)";
+}
+
+std::string Elephant::getSpecies() const { return "Elephant"; }

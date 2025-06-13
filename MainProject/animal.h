@@ -1,33 +1,25 @@
 #pragma once
 #include <string>
 
-using namespace std;
-
 class Animal {
 protected:
-    string name;
+    std::string name;
     int age;
     bool is_alive;
-    bool is_predator;
     double weight;
-    string species;
 
 public:
-    Animal(string name, int age, bool is_predator, double weight, string species);
-    virtual ~Animal();
+    Animal(const std::string& name, int age, double weight);
+    virtual ~Animal() {}
 
-    void setName(string newName);
-    void setAge(int newAge);
-    void setIsAlive(bool alive);
-    void setWeight(double newWeight);
+    virtual std::string makeSound() const = 0;
+    virtual std::string getInfo() const = 0;
+    virtual std::string getSpecies() const = 0;
 
-    string getName();
-    int getAge();
-    bool getIsAlive();
-    bool getIsPredator();
-    double getWeight();
-    string getSpecies();
+    std::string getName() const { return name; }
+    int getAge() const { return age; }
+    double getWeight() const { return weight; }
+    bool isAlive() const { return is_alive; }
 
-    virtual string makeSound() = 0;
-    virtual string getInfo();
+    void die() { is_alive = false; }
 };

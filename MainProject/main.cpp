@@ -1,28 +1,27 @@
 #include "zoo.h"
 #include "lion.h"
-#include "elephant.h"
 #include "tiger.h"
+#include "elephant.h"
+#include "monkey.h"
 #include "giraffe.h"
 #include "zebra.h"
-#include <iostream>
-
-using namespace std;
-
+#include<iostream>
 int main() {
     Zoo zoo;
 
-    // Add animals
-    zoo.addAnimal(new Lion("Simba", 5, 190.5));
-    zoo.addAnimal(new Lion("Nala", 4, 160.0));
-    zoo.addAnimal(new Elephant("Dumbo", 10, 5000.0));
-    zoo.addAnimal(new Tiger("Rajah", 6, 220.0));
-    zoo.addAnimal(new Giraffe("Melman", 8, 1200.0));
-    zoo.addAnimal(new Zebra("Marty", 7, 350.0));
+    // Add all animals to the zoo
+    zoo.addAnimal(new Lion("Simba", 5, 190.5, 25.0));
+    zoo.addAnimal(new Tiger("Tony", 8, 220.0, 7.5));
+    zoo.addAnimal(new Elephant("Dumbo", 15, 6000.0, 120.5));
+    zoo.addAnimal(new Monkey("George", 8, 45.0, true));
+    zoo.addAnimal(new Giraffe("Melman", 12, 800.0, 2.1));
+    zoo.addAnimal(new Zebra("Marty", 7, 350.0, 42));
 
     // Display zoo information
-    cout << "Zoo contains " << zoo.getAnimalCount() << " animals:\n";
-    cout << zoo.listAnimals() << endl;
-    cout << "Sounds:\n" << zoo.makeAllSounds() << endl;
+    zoo.listAnimals();
+    zoo.makeAllSounds();
+
+    std::cout << "\nTotal animals in zoo: " << zoo.getAnimalCount() << std::endl;
 
     return 0;
 }

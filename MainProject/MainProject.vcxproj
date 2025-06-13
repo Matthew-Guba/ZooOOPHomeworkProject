@@ -132,6 +132,7 @@
     <ClCompile Include="giraffe.cpp" />
     <ClCompile Include="lion.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="monkey.cpp" />
     <ClCompile Include="Tiger.cpp" />
     <ClCompile Include="zebra.cpp" />
     <ClCompile Include="Zoo.cpp" />
@@ -141,7 +142,7 @@
     <ClInclude Include="elephant.h" />
     <ClInclude Include="giraffe.h" />
     <ClInclude Include="lion.h" />
-    <ClInclude Include="main.h" />
+    <ClInclude Include="monkey.h" />
     <ClInclude Include="tiger.h" />
     <ClInclude Include="zebra.h" />
     <ClInclude Include="zoo.h" />

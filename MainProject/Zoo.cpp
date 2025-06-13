@@ -1,51 +1,29 @@
 #include "zoo.h"
-
-Zoo::Zoo() : capacity(10), count(0) {
-    animals = new Animal * [capacity];
-}
+#include <iostream>
 
 Zoo::~Zoo() {
     for (int i = 0; i < count; i++) {
         delete animals[i];
     }
-    delete[] animals;
 }
 
 void Zoo::addAnimal(Animal* animal) {
-    if (animal == nullptr) return;
-
-    if (count >= capacity) {
-        capacity *= 2;
-        Animal** newAnimals = new Animal * [capacity];
-
-        for (int i = 0; i < count; i++) {
-            newAnimals[i] = animals[i];
-        }
-
-        delete[] animals;
-        animals = newAnimals;
+    if (count < MAX_ANIMALS) {
+        animals[count++] = animal;
     }
-
-    animals[count++] = animal;
 }
 
-string Zoo::listAnimals() {
-    string result;
+void Zoo::listAnimals() const {
+    std::cout << "=== Zoo Animals (" << count << ") ===" << std::endl;
     for (int i = 0; i < count; i++) {
-        result += animals[i]->getInfo() + "\n";
+        std::cout << animals[i]->getInfo() << std::endl;
     }
-    return result;
 }
 
-string Zoo::makeAllSounds() {
-    string result;
+void Zoo::makeAllSounds() const {
+    std::cout << "\n=== Animal Sounds ===" << std::endl;
     for (int i = 0; i < count; i++) {
-        result += animals[i]->getSpecies() + " " + animals[i]->getName() +
-            " says: " + animals[i]->makeSound() + "\n";
+        std::cout << animals[i]->getName() << " says: "
+            << animals[i]->makeSound() << std::endl;
     }
-    return result;
-}
-
-int Zoo::getAnimalCount() {
-    return count;
 }

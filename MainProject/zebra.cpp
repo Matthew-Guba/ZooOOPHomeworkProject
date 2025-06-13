@@ -1,7 +1,15 @@
 #include "zebra.h"
 
-Zebra::Zebra(string name, int age, double weight)
-    : Animal(name, age, false, weight, "Zebra") {
+Zebra::Zebra(const std::string& name, int age, double weight, int stripe_count)
+    : Animal(name, age, weight), stripe_count(stripe_count) {
 }
 
-string Zebra::makeSound() { return "Bray!"; }
+std::string Zebra::makeSound() const { return "Whinny!"; }
+
+std::string Zebra::getInfo() const {
+    return "Zebra " + name + " (Age: " + std::to_string(age)
+        + ", Weight: " + std::to_string(weight) + "kg"
+        + ", Stripes: " + std::to_string(stripe_count) + ")";
+}
+
+std::string Zebra::getSpecies() const { return "Zebra"; }
